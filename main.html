@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Charger Lenders Map</title>
+    <style>
+        body {
+            font-family: Arial black, sans-serif;
+            text-align: center;
+            background-color: #f8f5f2;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h2 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        
+        #map-container {
+            width: 90%;
+            height: 500px;
+            margin: auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+            background-color: #e6e6fa;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 20px;
+            border-radius: 10px;
+        }
+        
+        #locationSelect {
+            margin: 10px;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 2px solid #ffb6c1;
+            background-color: #fff;
+            color: #000;
+            outline: none;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 182, 193, 0.8);
+            animation: fadeInDropdown 0.5s ease-in-out;
+        }
+        
+        #locationSelect:hover {
+            border-color: #87ceeb;
+            box-shadow: 0 0 15px rgba(135, 206, 235, 0.8);
+        }
+
+        #bookNow {
+            display: none;
+            margin-top: 20px;
+            padding: 12px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ffb6c1;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        #bookNow:hover {
+            background-color: #ff69b4;
+        }
+        
+        #detailsPanel {
+            position: fixed;
+            bottom: -50%;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-color: #fef2f2;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+            transition: bottom 0.5s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 20px;
+        }
+        
+        #lenderInfo {
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDropdown {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <h2>C-HIVE</h2>
+    <select id="locationSelect" onchange="updateMap()">
+        <option value="ECR">ECR, Chennai</option>
+        <option value="Pammal">Pammal, Chennai</option>
+        <option value="Medavakkam">Medavakkam, Chennai</option>
+        <option value="Anna Nagar">Anna Nagar, Chennai</option>
+        <option value="Maduravoyal">Maduravoyal, Chennai</option>
+    </select>
+    <div id="map-container">
+        <iframe id="mapFrame" src="file:///C:/Cavin%20Real/ZOHO/Maps.html"></iframe>
+    </div>
+    
+    <button id="bookNow" onclick="showDetails()">Book Now</button>
+    
+    <div id="detailsPanel">
+        <p id="lenderInfo"></p>
+    </div>
+    
+    <script>
+        let lenderData = {
+            "ECR": { name: "John Doe", price: "$12/hr" },
+            "Pammal": { name: "Jane Smith", price: "$10/hr" },
+            "Medavakkam": { name: "Arun Kumar", price: "$9/hr" },
+            "Anna Nagar": { name: "Priya Patel", price: "$11/hr" },
+            "Maduravoyal": { name: "Vikram Rao", price: "$13/hr" }
+        };
+
+        
+
+        function updateMap() {
+            var selectedLocation = document.getElementById('locationSelect').value;
+            var mapFrame = document.getElementById('mapFrame');
+            mapFrame.src = "file:///C:/Cavin%20Real/ZOHO/Maps.html?location=" + selectedLocation;
+            
+            document.getElementById('bookNow').style.display = 'block';
+            document.getElementById('detailsPanel').style.bottom = '-50%';
+        }
+        
+        function showDetails() {
+            var selectedLocation = document.getElementById('locationSelect').value;
+            var lenderInfo = lenderData[selectedLocation];
+            document.getElementById('lenderInfo').textContent = `Lender: ${lenderInfo.name}, Price: ${lenderInfo.price}`;
+            document.getElementById('detailsPanel').style.bottom = '0';
+        }
+    </script>
+</body>
+</html>

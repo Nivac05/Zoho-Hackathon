@@ -9,9 +9,11 @@ We have an maps API key from GoMaps and assumed some places(mentioned in the cod
 
 The updated map -----> 'Map.html'
 
-Download c-hive_script.js, c-hive_style.css, c-hive_index.html on same folder and open the index.html file
+Download c-hive_script.js, c-hive_style.css, c-hive_index.html and app.py on same folder----> open VSCode and run app.py , once the flask api gets activated ---> open the index.html file 
 
-DQN model is trained for dynamic pricing ---->
+DQN model is trained for dynamic pricing ----> 'Dynamic_pricing.ipynb'
+
+
 
 
 

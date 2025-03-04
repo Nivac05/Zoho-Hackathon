@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-HIVE - EV Charging Price Prediction</title>
+    <link rel="stylesheet" href="C:\Users\sowmi\Downloads\c-hive (2)\project\c-hive_style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="battery-icon">
+                    <rect x="2" y="7" width="20" height="10" rx="2" ry="2"></rect>
+                    <line x1="22" x2="22" y1="11" y2="13"></line>
+                </svg>
+                <h1>C-HIVE</h1>
+            </div>
+            <p>EV-Charger Sharing System</p>
+        </header>
+
+        <div class="card">
+            <form id="prediction-form">
+                <div class="form-group">
+                    <label>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        Charging Location
+                    </label>
+                    <input type="text" id="location_name" name="location_name" placeholder="Enter charging location">
+                    <input type="hidden" id="location" name="location" value="1">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            Start Hour (0-23)
+                        </label>
+                        <input type="number" id="start_hour" name="start_hour" min="0" max="23" value="9">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            End Hour (0-23)
+                        </label>
+                        <input type="number" id="end_hour" name="end_hour" min="0" max="23" value="17">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        Charging Demand (Users)
+                    </label>
+                    <input type="number" id="users_demand" name="users_demand" min="1" value="5">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        Day of Week
+                    </label>
+                    <select id="day_of_week" name="day_of_week">
+                        <option value="1">Monday</option>
+                        <option value="2">Tuesday</option>
+                        <option value="3">Wednesday</option>
+                        <option value="4">Thursday</option>
+                        <option value="5">Friday</option>
+                        <option value="6">Saturday</option>
+                        <option value="7">Sunday</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="submit-btn">Book Charging Session</button>
+            </form>
+
+            <div id="error-message" class="error-message"></div>
+
+            <div id="prediction-result" class="prediction-result hidden">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    Predicted Price
+                </h3>
+                <div id="price-value" class="price-value">$0.00</div>
+                <p class="price-note">Based on your selected parameters</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 C-HIVE - EV-Charger Sharing System</p>
+        </footer>
+    </div>
+
+    <script src="C:\Users\sowmi\Downloads\c-hive (2)\project\c-hive_script.js"></script>
+</body>
+</html>

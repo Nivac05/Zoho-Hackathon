@@ -8,3 +8,10 @@ Modified Dataset ----> 'Updated.csv'
 We have an maps API key from GoMaps and assumed some places(mentioned in the code) to have the charging lender places ----> 'API.ipynb'
 
 The updated map -----> 'Map.html'
+
+Download c-hive_script.js, c-hive_style.css, c-hive_index.html on same folder and open the index.html file
+
+DQN model is trained for dynamic pricing ---->
+
+
+

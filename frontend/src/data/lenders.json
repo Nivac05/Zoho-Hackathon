@@ -1,0 +1,232 @@
+{
+    "ECR": [
+        {
+            "id": "ecr-1",
+            "name": "SolarCharge ECR Hub",
+            "lat": 12.8230,
+            "lng": 80.2280,
+            "connector": "CCS2",
+            "power": "50kW",
+            "available": true,
+            "rating": 4.8,
+            "address": "ECR Road, Palavakkam"
+        },
+        {
+            "id": "ecr-2",
+            "name": "GreenPower Station",
+            "lat": 12.8250,
+            "lng": 80.2300,
+            "connector": "Type 2",
+            "power": "22kW",
+            "available": true,
+            "rating": 4.5,
+            "address": "ECR, Sholinganallur"
+        },
+        {
+            "id": "ecr-3",
+            "name": "EcoCharge Neelankarai",
+            "lat": 12.8270,
+            "lng": 80.2320,
+            "connector": "CHAdeMO",
+            "power": "30kW",
+            "available": false,
+            "rating": 4.2,
+            "address": "ECR, Neelankarai"
+        },
+        {
+            "id": "ecr-4",
+            "name": "SpeedCharge East",
+            "lat": 12.8210,
+            "lng": 80.2270,
+            "connector": "CCS2",
+            "power": "75kW",
+            "available": true,
+            "rating": 4.9,
+            "address": "ECR, Thiruvanmiyur"
+        },
+        {
+            "id": "ecr-5",
+            "name": "ZapStation Kovalam",
+            "lat": 12.8225,
+            "lng": 80.2255,
+            "connector": "Type 2",
+            "power": "11kW",
+            "available": true,
+            "rating": 4.1,
+            "address": "ECR, Kovalam"
+        }
+    ],
+    "Anna Nagar": [
+        {
+            "id": "an-1",
+            "name": "Anna Nagar SuperCharge",
+            "lat": 13.0805,
+            "lng": 80.2054,
+            "connector": "CCS2",
+            "power": "100kW",
+            "available": true,
+            "rating": 4.9,
+            "address": "2nd Avenue, Anna Nagar"
+        },
+        {
+            "id": "an-2",
+            "name": "Metro Charge Hub",
+            "lat": 13.0828,
+            "lng": 80.2071,
+            "connector": "Type 2",
+            "power": "22kW",
+            "available": true,
+            "rating": 4.6,
+            "address": "Anna Nagar West"
+        },
+        {
+            "id": "an-3",
+            "name": "GreenSpot AN Tower",
+            "lat": 13.0825,
+            "lng": 80.2087,
+            "connector": "CCS2",
+            "power": "50kW",
+            "available": false,
+            "rating": 4.3,
+            "address": "Anna Nagar Tower Park"
+        },
+        {
+            "id": "an-4",
+            "name": "PowerPlug Shanthi",
+            "lat": 13.0833,
+            "lng": 80.2085,
+            "connector": "Type 1",
+            "power": "7.4kW",
+            "available": true,
+            "rating": 4.0,
+            "address": "Shanthi Colony, Anna Nagar"
+        },
+        {
+            "id": "an-5",
+            "name": "UltraCharge AN",
+            "lat": 13.0879,
+            "lng": 80.2145,
+            "connector": "CCS2",
+            "power": "150kW",
+            "available": true,
+            "rating": 4.7,
+            "address": "Anna Nagar East"
+        }
+    ],
+    "Medavakkam": [
+        {
+            "id": "mv-1",
+            "name": "Medavakkam EV Hub",
+            "lat": 12.9220,
+            "lng": 80.1750,
+            "connector": "CCS2",
+            "power": "50kW",
+            "available": true,
+            "rating": 4.7,
+            "address": "Medavakkam Main Road"
+        },
+        {
+            "id": "mv-2",
+            "name": "QuickCharge MV",
+            "lat": 12.9230,
+            "lng": 80.1760,
+            "connector": "CHAdeMO",
+            "power": "30kW",
+            "available": true,
+            "rating": 4.4,
+            "address": "Kamakshi Hospital Road"
+        },
+        {
+            "id": "mv-3",
+            "name": "SouthCharge Point",
+            "lat": 12.9240,
+            "lng": 80.1770,
+            "connector": "Type 2",
+            "power": "22kW",
+            "available": false,
+            "rating": 4.1,
+            "address": "Vijaya Nagar, Medavakkam"
+        },
+        {
+            "id": "mv-4",
+            "name": "Pixel EV Station",
+            "lat": 12.9250,
+            "lng": 80.1780,
+            "connector": "CCS2",
+            "power": "60kW",
+            "available": true,
+            "rating": 4.6,
+            "address": "Medavakkam, South Chennai"
+        }
+    ],
+    "Pammal": [
+        {
+            "id": "pm-1",
+            "name": "Pammal PowerHub",
+            "lat": 12.9680,
+            "lng": 80.1290,
+            "connector": "CCS2",
+            "power": "50kW",
+            "available": true,
+            "rating": 4.6,
+            "address": "Pammal Main Road"
+        },
+        {
+            "id": "pm-2",
+            "name": "EcoCharge Pammal",
+            "lat": 12.9685,
+            "lng": 80.1275,
+            "connector": "Type 2",
+            "power": "22kW",
+            "available": true,
+            "rating": 4.3,
+            "address": "Pammal, Chennai"
+        },
+        {
+            "id": "pm-3",
+            "name": "SwiftCharge South",
+            "lat": 12.9700,
+            "lng": 80.1323,
+            "connector": "CHAdeMO",
+            "power": "30kW",
+            "available": true,
+            "rating": 4.5,
+            "address": "Pammal Bypass Road"
+        }
+    ],
+    "Maduravoyal": [
+        {
+            "id": "mdy-1",
+            "name": "Maduravoyal Charge",
+            "lat": 13.0610,
+            "lng": 80.1660,
+            "connector": "CCS2",
+            "power": "50kW",
+            "available": true,
+            "rating": 4.7,
+            "address": "Maduravoyal Main Street"
+        },
+        {
+            "id": "mdy-2",
+            "name": "WestCharge Hub",
+            "lat": 13.0620,
+            "lng": 80.1670,
+            "connector": "Type 2",
+            "power": "22kW",
+            "available": false,
+            "rating": 4.2,
+            "address": "Near Chennai Bypass"
+        },
+        {
+            "id": "mdy-3",
+            "name": "TurboCharge West",
+            "lat": 13.0630,
+            "lng": 80.1680,
+            "connector": "CCS2",
+            "power": "75kW",
+            "available": true,
+            "rating": 4.8,
+            "address": "Maduravoyal, Chennai"
+        }
+    ]
+}
